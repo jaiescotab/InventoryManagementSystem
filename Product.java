@@ -1,52 +1,71 @@
-package Java.InventoryManagementSystem;
-
 public abstract class Product {
 
- // Encapsulation
     private String id;
     private String name;
     private double unitPrice;
     private int quantity;
     private int reorderLevel;
 
-// Constructor
 public Product(String id, String name, double unitPrice, int quantity, int reorderLevel) {
-    this.id = id;
-    this.name = name;
-    this.unitPrice = unitPrice;
-    this.quantity = quantity;
-    this.reorderLevel = reorderLevel;
+    setId(id);
+    setName(name);
+    setUnitPrice(unitPrice);
+    setQuantity(quantity);
+    setReorderLevel(reorderLevel);
 }
 
-// Getters
 public String getId() {
     return id;
 }
-
+public void setId(String id) {
+    if (id != null && !id.isBlank()) {
+        this.id = id;
+    } else {
+        throw new IllegalArgumentException("ID cannot be null or blank.");
+    }
+}
 public String getName() {
     return name;
 }
-
+public void setName(String name) {
+    if (name != null && !name.isBlank()) {
+        this.name = name;
+    } else {
+        throw new IllegalArgumentException("Name cannot be null or blank.");
+    }
+}
 public double getUnitPrice() {
     return unitPrice;
 }
-
+public void setUnitPrice(double unitPrice) {
+    if (unitPrice >= 0) {
+        this.unitPrice = unitPrice;
+    } else {
+        throw new IllegalArgumentException("Unit price cannot be negative.");
+    }
+}
 public int getQuantity() {
     return quantity;
+}
+public void setQuantity(int quantity) {
+    if (quantity >= 0) {
+        this.quantity = quantity;
+    } else {
+        throw new IllegalArgumentException("Quantity cannot be negative.");
+    }
 }
 
 public int getReorderLevel() {
     return reorderLevel;
 }
-
-// Setters
-public void setId(String id) {
-    this.id = id;
+public void setReorderLevel(int reorderLevel) {
+    if (reorderLevel >= 0) {
+        this.reorderLevel = reorderLevel;
+    } else {
+        throw new IllegalArgumentException("Reorder level cannot be negative.");
+    }
 }
-
-// Validation
-
 // Abstraction
-public abstract String abstractMethod1();
-public abstract String abstractMethod2();
+public abstract String getProductVariant();
+public abstract String getProductColor();
 }
