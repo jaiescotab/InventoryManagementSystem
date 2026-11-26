@@ -3,7 +3,6 @@ package Java.InventoryManagementSystem;
 public class WrappingSupplies extends Product {
 
     // Category-Specific Field
-    private String materialType;
 
     // Constructor
 

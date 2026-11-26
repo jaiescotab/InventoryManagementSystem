@@ -13,7 +13,6 @@ public Product(String id, String name, double unitPrice, int quantity, int reord
     setQuantity(quantity);
     setReorderLevel(reorderLevel);
 }
-
 public String getId() {
     return id;
 }
@@ -54,7 +53,6 @@ public void setQuantity(int quantity) {
         throw new IllegalArgumentException("Quantity cannot be negative.");
     }
 }
-
 public int getReorderLevel() {
     return reorderLevel;
 }
@@ -65,7 +63,7 @@ public void setReorderLevel(int reorderLevel) {
         throw new IllegalArgumentException("Reorder level cannot be negative.");
     }
 }
-// Abstraction
+
 public abstract String getProductVariant();
 public abstract String getProductColor();
 }
