@@ -1,7 +1,10 @@
+package Java.InventoryManagementSystem;
+
 public class BouquetAccessories extends Product {
 
     // Category-Specific Field
-    
+    private String accessoryType;
+
     // Constructor
 
     // Getters
