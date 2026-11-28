@@ -1,62 +1,48 @@
 package Java.InventoryManagementSystem;
 
 public class BouquetAccessories extends Product {
-    private String accessorySpec; // e.g., "2m Warm LED", "Ferrero 8-pc Box", "6-inch Mini Bear"
-
-    public BouquetAccessories(String id, String name, double unitPrice, int quantity, int reorderLevel, String accessorySpec) {
-        super(id, name, unitPrice, quantity, reorderLevel);
-        setAccessorySpec(accessorySpec);
-    }
-
-    public String getAccessorySpec() {
-        return accessorySpec;
-    }
-
-    public void setAccessorySpec(String accessorySpec) {
-        if (accessorySpec == null || accessorySpec.trim().isEmpty()) {
-            throw new IllegalArgumentException("Accessory specification cannot be empty.");
-        }
-        this.accessorySpec = accessorySpec.trim();
-    }
-
-    @Override
-    public String getCategoryName() {
-        return "BouquetAccessories";
-    }
-
-    @Override
-    public String getCategoryDetails() {
-        return "Spec: " + accessorySpec;
-    }
-
-    @Override
-    public String getHandlingWarning() {
-        return "Store add-ons in a cool, dry bin away from water buckets.";
-    }
-
-    @Override
-    public String getCategoryFieldPrompt() {
-        return "New Accessory Spec (e.g., 2m Warm LED / 6-inch Bear): ";
-    }
-
-    @Override
-    public void updateCategoryField(String newValue) {
-        setAccessorySpec(newValue);
-    }
-}
-public class BouquetAccessories extends Product {
-
-    // Category-Specific Field
-    private String accessoryType;
-
-    // Constructor
-
-    // Getters
-
-    // Setters
-
-    // Override Abstract Method 1
-
-    // Override Abstract Method 2
     
+    private String accessoryType;
+    private String accessoryColor;
+
+    public BouquetAccessories(String id, String name, double unitPrice, int quantity, int reorderLevel,
+                              String accessoryType, String accessoryColor) {
+        super(id, name, unitPrice, quantity, reorderLevel);
+        setAccessoryType(accessoryType);
+        setAccessoryColor(accessoryColor);
+    }
+
+    public String getAccessoryType() {
+        return accessoryType;
+    }
+
+    public void setAccessoryType(String accessoryType) {
+        if (accessoryType != null && !accessoryType.isBlank()) {
+            this.accessoryType = accessoryType.trim();
+        } else {
+            throw new IllegalArgumentException("Accessory type cannot be null or blank.");
+        }
+    }
+
+    public String getAccessoryColor() {
+        return accessoryColor;
+    }
+
+    public void setAccessoryColor(String accessoryColor) {
+        if (accessoryColor != null && !accessoryColor.isBlank()) {
+            this.accessoryColor = accessoryColor.trim();
+        } else {
+            throw new IllegalArgumentException("Accessory color cannot be null or blank.");
+        }
+    }
+
+    @Override
+    public String getProductVariant() {
+        return accessoryType;
+    }
+
+    @Override
+    public String getProductColor() {
+        return accessoryColor;
+    }
 }
