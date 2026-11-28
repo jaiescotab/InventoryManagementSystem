@@ -1,7 +1,9 @@
-package Java.InventoryManagementSystem;
-
 public class InventoryManager {
 
+
+    private Product[] products;
+    private int productCount;
+    
    // Product Collection (Array or ArrayList)
 
     // Transaction Collection (Array or ArrayList)

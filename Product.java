@@ -63,7 +63,6 @@ public void setReorderLevel(int reorderLevel) {
         throw new IllegalArgumentException("Reorder level cannot be negative.");
     }
 }
-
 public abstract String getProductVariant();
 public abstract String getProductColor();
 }

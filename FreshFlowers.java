@@ -1,5 +1,3 @@
-package Java.InventoryManagementSystem;
-
 public class FreshFlowers extends Product{
     
     private String flowerType;
