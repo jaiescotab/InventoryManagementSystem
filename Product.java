@@ -1,3 +1,4 @@
+package Java.InventoryManagementSystem;
 public abstract class Product {
 
     private String id;
