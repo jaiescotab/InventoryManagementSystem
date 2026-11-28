@@ -1,13 +1,48 @@
 package Java.InventoryManagementSystem;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class StockTransaction {
+    private static final DateTimeFormatter FMT = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
- // Record of stock movement or change
+    private final int sequenceNumber;
+    private final String type;
+    private final String productId;
+    private final int quantity;
+    private final String timestamp;
 
-    // Private Fields
+    public StockTransaction(int sequenceNumber, String type, String productId, int quantity) {
+        this.sequenceNumber = sequenceNumber;
+        this.type = type;
+        this.productId = productId;
+        this.quantity = quantity;
+        this.timestamp = LocalDateTime.now().format(FMT);
+    }
 
-    // Constructor
+    public int getSequenceNumber() {
+        return sequenceNumber;
+    }
 
-    // Getters
+    public String getType() {
+        return type;
+    }
 
+    public String getProductId() {
+        return productId;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("#%-4d | %-12s | %-6s | qty: %-4d | %s",
+                sequenceNumber, type, productId, quantity, timestamp);
+    }
 }
