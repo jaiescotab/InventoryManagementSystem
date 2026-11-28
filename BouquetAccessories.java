@@ -1,3 +1,4 @@
+package Java.InventoryManagementSystem;
 public class BouquetAccessories extends Product {
     
     private String accessoryType;

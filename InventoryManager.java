@@ -1,3 +1,5 @@
+package Java.InventoryManagementSystem;
+
 import java.util.ArrayList;
 
 public class InventoryManager {

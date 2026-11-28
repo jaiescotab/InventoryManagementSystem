@@ -1,3 +1,4 @@
+package Java.InventoryManagementSystem;
 public class WrappingSupplies extends Product {
 
     private String wrapType;
